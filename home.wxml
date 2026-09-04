@@ -1,0 +1,113 @@
+<view class="page-shell home {{themeClass}}">
+  <view class="page-title">
+    <text class="name">水质检测仪</text>
+    <view class="title-hint">
+      <image class="boat-icon" src="/assets/boat-icon.png" mode="aspectFit" />
+      <text>拖动小船或输入数值</text>
+    </view>
+  </view>
+
+  <block wx:for="{{metricList}}" wx:key="key">
+    <view class="card metric-card">
+      <view class="metric-head">
+        <text class="metric-name">{{item.label}}</text>
+        <view class="metric-control">
+          <button class="step-btn" data-key="{{item.key}}" data-step="{{item.minusStep}}" bindtap="onStep">−</button>
+          <input class="metric-input" type="digit" value="{{item.display}}" data-key="{{item.key}}" bindblur="onInputBlur" />
+          <button class="step-btn" data-key="{{item.key}}" data-step="{{item.step}}" bindtap="onStep">+</button>
+        </view>
+      </view>
+      <view class="boat-slider" data-key="{{item.key}}">
+        <view class="slider-track"></view>
+        <view class="slider-fill" style="width: {{item.percent}}%; background: {{item.color}};"></view>
+        <movable-area class="slider-area">
+          <movable-view
+            class="boat-thumb"
+            direction="horizontal"
+            x="{{item.x}}"
+            damping="30"
+            friction="2"
+            data-key="{{item.key}}"
+            bindchange="onSliderMove"
+          >
+            <image class="thumb-image" src="/assets/boat-icon.png" mode="aspectFit" />
+          </movable-view>
+        </movable-area>
+      </view>
+      <view class="range-labels">
+        <text>{{item.min}}</text>
+        <text>{{item.maxLabel}}</text>
+      </view>
+    </view>
+  </block>
+
+  <view class="card summary-strip">
+    <view><text>pH</text><text class="summary-value">{{phDisplay}}</text></view>
+    <view><text>温度</text><text class="summary-value">{{tempDisplay}}</text></view>
+    <view><text>溶解氧</text><text class="summary-value">{{oxygenDisplay}}</text></view>
+  </view>
+
+  <view class="quick-actions">
+    <button class="action reset-action" bindtap="resetMetrics">重置参数</button>
+    <button class="action save-action" bindtap="saveRecord">保存记录</button>
+    <button class="action history-action" bindtap="toggleHistory">{{historyButtonText}}</button>
+    <button class="action map-action" bindtap="openMap">地图导航</button>
+    <button class="action report-action" bindtap="generateReport">生成报告</button>
+  </view>
+
+  <view class="card chart-card" wx:if="{{showHistory}}">
+    <view class="section-head">
+      <text class="section-title">历史对比曲线</text>
+      <button class="ghost-btn" bindtap="clearHistory">清空</button>
+    </view>
+    <view class="chart-box" wx:if="{{historyRecords.length}}">
+      <canvas type="2d" id="historyChart" class="chart-canvas"></canvas>
+    </view>
+    <view class="empty-history" wx:else>暂无历史曲线数据，保存记录后可重新生成。</view>
+  </view>
+
+  <view class="card quality-card">
+    <view class="quality-top">
+      <view>
+        <view class="quality-label">
+          <view class="drop-icon"></view>
+          <text>{{qualityLabel}}</text>
+        </view>
+        <text class="quality-note">{{qualityNote}}</text>
+      </view>
+      <view class="score-ring">
+        <canvas type="2d" id="scoreRing" class="score-canvas"></canvas>
+        <view class="score-inner">
+          <text class="score-value">{{scoreText}}</text>
+          <text class="score-caption">综合评分</text>
+        </view>
+      </view>
+    </view>
+    <view class="score-bars">
+      <block wx:for="{{scoreRows}}" wx:key="label">
+        <view class="score-row">
+          <text>{{item.label}}</text>
+          <view class="score-track"><view class="score-fill" style="width: {{item.score}}%; background: {{item.color}};"></view></view>
+          <text class="score-number">{{item.score}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="card suggestion-card">
+    <view class="section-head">
+      <text class="section-title">改善建议</text>
+      <text class="suggestion-count">{{suggestions.length}}项建议</text>
+    </view>
+    <block wx:for="{{suggestions}}" wx:key="title">
+      <view class="suggestion-item">
+        <view class="suggestion-title">
+          <image class="boat-icon small" src="/assets/boat-icon.png" mode="aspectFit" />
+          <text>{{item.title}}</text>
+          <text class="priority">{{item.level}}</text>
+        </view>
+        <text class="suggestion-text">{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,147 @@
+.device-hero {
+  padding: 34rpx 30rpx;
+  text-align: center;
+}
+
+.device-circle {
+  width: 220rpx;
+  height: 220rpx;
+  margin: 10rpx auto 26rpx;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%, #fff 0 27%, #2f91e8 28% 57%, #d9ecff 58% 100%);
+  box-shadow: inset 0 0 0 18rpx rgba(255,255,255,.7), 0 18rpx 42rpx rgba(29, 110, 210, .24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 54rpx;
+  font-weight: 900;
+  transition: all 0.3s;
+}
+
+.device-circle.connected {
+  background: radial-gradient(circle at 50% 42%, #fff 0 27%, #28c49a 28% 57%, #d4f5e9 58% 100%);
+}
+
+.device-desc {
+  display: block;
+  margin: 18rpx 0 28rpx;
+  color: #65777d;
+  font-size: 25rpx;
+  line-height: 1.6;
+}
+
+.primary-btn,
+.secondary-btn {
+  width: 100%;
+  height: 88rpx;
+  border-radius: 16rpx;
+  font-size: 30rpx;
+  font-weight: 850;
+  line-height: 88rpx;
+}
+
+.primary-btn {
+  border: 0;
+  background: linear-gradient(135deg, #1677d8, #38a7ff);
+  color: #fff;
+}
+
+.secondary-btn {
+  margin-top: 18rpx;
+  border: 1rpx solid #cddff2;
+  background: #fff;
+  color: #19304a;
+}
+
+.primary-btn::after,
+.secondary-btn::after {
+  border: 0;
+}
+
+.device-status {
+  padding: 26rpx;
+  display: block;
+}
+
+.device-status .status-row {
+  margin-bottom: 18rpx;
+}
+
+.device-status .status-row:last-child {
+  margin-bottom: 0;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #647b91;
+}
+
+.status-value {
+  color: #19304a;
+  font-weight: 900;
+}
+
+.status-ok {
+  color: #28c49a;
+}
+
+.status-none {
+  color: #f05b65;
+}
+
+.device-list {
+  padding: 26rpx;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #edf3f8;
+}
+
+.list-item:last-child {
+  border-bottom: 0;
+}
+
+.list-title,
+.list-desc {
+  display: block;
+}
+
+.list-title {
+  font-size: 28rpx;
+  font-weight: 900;
+  color: #19304a;
+}
+
+.list-desc {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: #8da2b4;
+}
+
+.list-action {
+  padding: 8rpx 18rpx;
+  border-radius: 12rpx;
+  background: #fff0f1;
+  color: #e2515d;
+  font-size: 24rpx;
+  font-weight: 850;
+}
+
+.list-action.connect {
+  background: #e7f4ff;
+  color: #176fbf;
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 30rpx 0;
+  color: #8da2b4;
+  font-size: 24rpx;
+}

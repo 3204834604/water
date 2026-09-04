@@ -1,0 +1,45 @@
+<view class="page-shell {{themeClass}}">
+  <view class="page-title">
+    <text class="name">检测报告</text>
+    <text class="title-hint">指标明细与改善建议</text>
+  </view>
+
+  <view wx:if="{{report}}" class="card report-card">
+    <view class="report-head">
+      <text class="report-title">{{report.qualityLabel}}</text>
+      <text class="report-time">生成于 {{report.createdAt}}</text>
+    </view>
+
+    <view class="score-board">
+      <view class="score-ring">
+        <canvas type="2d" id="scoreRing" class="score-canvas"></canvas>
+        <view class="score-inner">
+          <text class="score-value">{{report.score}}</text>
+          <text class="score-caption">综合评分</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="metric-list">
+      <view class="metric-line"><text>pH 值</text><text class="metric-value">{{report.values.ph}}</text></view>
+      <view class="metric-line"><text>温度</text><text class="metric-value">{{report.values.temp}} ℃</text></view>
+      <view class="metric-line"><text>溶解氧</text><text class="metric-value">{{report.values.oxygen}} mg/L</text></view>
+    </view>
+
+    <view class="section-head"><text class="section-title">改善建议</text></view>
+    <block wx:for="{{report.suggestions}}" wx:key="title">
+      <view class="suggestion-item">
+        <view class="suggestion-title">
+          <text>{{item.title}}</text>
+          <text class="priority">{{item.level}}</text>
+        </view>
+        <text class="suggestion-text">{{item.text}}</text>
+      </view>
+    </block>
+  </view>
+
+  <view wx:else class="card empty-card">
+    <text>暂无报告</text>
+    <button class="primary-btn" bindtap="goBack">返回首页生成</button>
+  </view>
+</view>

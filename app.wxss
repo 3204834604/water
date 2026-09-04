@@ -1,0 +1,105 @@
+page {
+  min-height: 100vh;
+  color: #19304a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(180deg, #dff1ff 0%, #f4fbff 52%, #edf7ff 100%);
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 28rpx 28rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 24rpx;
+}
+
+.page-title .name {
+  display: block;
+  font-size: 42rpx;
+  line-height: 1.2;
+  font-weight: 900;
+  color: #19304a;
+}
+
+.title-hint {
+  margin-top: 12rpx;
+  display: inline-flex;
+  align-items: center;
+  padding: 8rpx 18rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.62);
+  color: #5b7f9f;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.title-hint .boat-icon {
+  margin-right: 8rpx;
+}
+
+.boat-icon {
+  width: 38rpx;
+  height: 38rpx;
+  animation: boatFloat 1.9s ease-in-out infinite;
+}
+
+@keyframes boatFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-6rpx) rotate(3deg); }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1rpx solid rgba(219, 233, 247, 0.92);
+  border-radius: 16rpx;
+  box-shadow: 0 12rpx 28rpx rgba(33, 101, 176, 0.09);
+  margin-bottom: 22rpx;
+  box-sizing: border-box;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 31rpx;
+  font-weight: 900;
+  color: #19304a;
+}
+
+.muted {
+  color: #6e8396;
+}
+
+/* 交互反馈 */
+.tap-feedback {
+  opacity: 0.85;
+  transform: scale(0.98);
+}
+
+/* 主题：深色 */
+.page-shell.dark {
+  color: #e1eef8;
+  background: linear-gradient(180deg, #0d1b2a 0%, #12263d 52%, #0f2135 100%);
+}
+
+.page-shell.dark .page-title .name,
+.page-shell.dark .section-title {
+  color: #e1eef8;
+}
+
+.page-shell.dark .card {
+  background: rgba(22, 42, 65, 0.92);
+  border-color: rgba(60, 90, 130, 0.6);
+}
+
+.page-shell.dark .title-hint {
+  background: rgba(255, 255, 255, 0.1);
+  color: #8aa4bd;
+}

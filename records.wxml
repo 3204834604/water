@@ -1,0 +1,29 @@
+<view class="page-shell {{themeClass}}">
+  <view class="page-title">
+    <text class="name">检测记录</text>
+    <text class="title-hint">共 {{records.length}} 条</text>
+  </view>
+
+  <view wx:if="{{records.length}}" class="record-list">
+    <block wx:for="{{records}}" wx:key="id">
+      <view class="card record-item">
+        <view class="record-top">
+          <text class="record-time">{{item.date}}</text>
+          <text class="record-score" style="color: {{item.score >= 85 ? '#28c49a' : item.score >= 70 ? '#f5b32f' : '#f05b65'}}">{{item.score}} 分</text>
+        </view>
+        <view class="record-tags">
+          <text>pH {{item.values.ph}}</text>
+          <text>温度 {{item.values.temp}}℃</text>
+          <text>溶解氧 {{item.values.oxygen}}mg/L</text>
+        </view>
+        <text class="record-label">{{item.qualityLabel}}</text>
+      </view>
+    </block>
+    <button class="clear-btn" bindtap="clearAll">清空记录</button>
+  </view>
+
+  <view wx:else class="card empty-card">
+    <text>暂无检测记录</text>
+    <text class="empty-hint">在首页保存记录后将显示在这里</text>
+  </view>
+</view>

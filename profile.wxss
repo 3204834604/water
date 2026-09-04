@@ -1,0 +1,149 @@
+.user-card {
+  padding: 32rpx;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #1677d8, #58b7ff);
+  color: #fff;
+}
+
+.user-card .avatar,
+.user-card .avatar-img {
+  margin-right: 24rpx;
+}
+
+.avatar,
+.avatar-img {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+  background: rgba(255,255,255,.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48rpx;
+  font-weight: 900;
+}
+
+.avatar-img {
+  background: transparent;
+}
+
+.user-name,
+.user-meta,
+.menu-title,
+.menu-desc,
+.map-text {
+  display: block;
+}
+
+.user-name {
+  font-size: 34rpx;
+  font-weight: 900;
+}
+
+.user-meta {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  opacity: .86;
+}
+
+.menu-list {
+  display: block;
+}
+
+.menu-item {
+  min-height: 104rpx;
+  padding: 22rpx 24rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 18rpx;
+}
+
+.menu-list .menu-item:last-child {
+  margin-bottom: 0;
+}
+
+.menu-item .menu-icon {
+  flex: 0 0 64rpx;
+  margin-right: 18rpx;
+}
+
+.menu-item > view:nth-child(2) {
+  flex: 1;
+  margin-right: 18rpx;
+}
+
+.menu-item:active {
+  opacity: 0.8;
+  transform: scale(0.99);
+}
+
+.menu-icon {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 16rpx;
+  background: #e7f2ff;
+  color: #176fbf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-weight: 900;
+}
+
+.menu-title {
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.menu-desc {
+  margin-top: 6rpx;
+  color: #6e8396;
+  font-size: 23rpx;
+}
+
+.arrow {
+  color: #9badbf;
+  font-size: 42rpx;
+}
+
+.map-card {
+  height: 230rpx;
+  padding: 26rpx;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(35deg, rgba(47,145,232,.2), rgba(255,255,255,.76)), repeating-linear-gradient(90deg, #dcecff 0 32rpx, #edf6ff 32rpx 64rpx);
+}
+
+.map-card:active {
+  opacity: 0.85;
+}
+
+.map-text {
+  margin-top: 12rpx;
+  color: #52646a;
+  font-size: 24rpx;
+}
+
+.pin {
+  position: absolute;
+  left: 56%;
+  top: 48%;
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50% 50% 50% 0;
+  background: #e95d45;
+  transform: rotate(-45deg);
+  box-shadow: 0 8rpx 18rpx rgba(233, 93, 69, 0.28);
+}
+
+.pin::after {
+  content: "";
+  position: absolute;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: #fff;
+  left: 16rpx;
+  top: 16rpx;
+}

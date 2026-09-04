@@ -1,0 +1,158 @@
+.report-card {
+  padding: 30rpx 26rpx;
+}
+
+.report-head {
+  margin-bottom: 24rpx;
+}
+
+.report-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 950;
+  color: #19304a;
+}
+
+.report-time {
+  display: block;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #8da2b4;
+}
+
+.score-board {
+  display: flex;
+  justify-content: center;
+  margin: 20rpx 0 30rpx;
+}
+
+.score-ring {
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.score-inner {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-value {
+  font-size: 52rpx;
+  font-weight: 950;
+  color: #19ae87;
+  line-height: 1;
+}
+
+.score-caption {
+  margin-top: 6rpx;
+  font-size: 22rpx;
+  color: #6c8195;
+}
+
+.metric-list {
+  display: block;
+  margin-bottom: 28rpx;
+  padding: 20rpx;
+  background: #f4f9ff;
+  border-radius: 14rpx;
+}
+
+.metric-list .metric-line {
+  margin-bottom: 14rpx;
+}
+
+.metric-list .metric-line:last-child {
+  margin-bottom: 0;
+}
+
+.metric-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #19304a;
+}
+
+.metric-value {
+  font-weight: 900;
+}
+
+.suggestion-item {
+  border: 1rpx solid #ffd6da;
+  background: #fff4f5;
+  border-radius: 16rpx;
+  padding: 22rpx;
+  margin-top: 16rpx;
+}
+
+.suggestion-title {
+  display: flex;
+  align-items: center;
+  color: #394d61;
+  font-size: 28rpx;
+  font-weight: 900;
+  margin-bottom: 12rpx;
+}
+
+.suggestion-title text:not(.priority) {
+  margin-right: 12rpx;
+}
+
+.priority {
+  height: 34rpx;
+  padding: 0 14rpx;
+  border-radius: 999rpx;
+  background: #ffe2e5;
+  color: #e24e5a;
+  font-size: 21rpx;
+  font-weight: 900;
+  line-height: 34rpx;
+}
+
+.suggestion-text {
+  color: #668096;
+  font-size: 24rpx;
+  line-height: 1.65;
+}
+
+.empty-card {
+  padding: 60rpx 40rpx;
+  text-align: center;
+  color: #8da2b4;
+  font-size: 28rpx;
+}
+
+.primary-btn {
+  margin-top: 28rpx;
+  width: 100%;
+  height: 88rpx;
+  border-radius: 16rpx;
+  border: 0;
+  background: linear-gradient(135deg, #1677d8, #38a7ff);
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 850;
+  line-height: 88rpx;
+}
+
+.primary-btn::after {
+  border: 0;
+}

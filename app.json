@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/profile/profile",
+    "pages/device/device",
+    "pages/more/more",
+    "pages/report/report",
+    "pages/records/records"
+  ],
+  "window": {
+    "navigationBarTitleText": "水质检测仪",
+    "navigationBarBackgroundColor": "#dff1ff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eef8ff"
+  },
+  "tabBar": {
+    "color": "#8da2b4",
+    "selectedColor": "#176fbf",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主界面"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "个人中心"
+      },
+      {
+        "pagePath": "pages/device/device",
+        "text": "设备连接"
+      },
+      {
+        "pagePath": "pages/more/more",
+        "text": "更多"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取位置用于地图导航与采样点标记"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation"
+  ]
+}

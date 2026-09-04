@@ -1,0 +1,85 @@
+.setting-group {
+  overflow: hidden;
+}
+
+.setting-item {
+  min-height: 112rpx;
+  padding: 0 26rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #edf3f8;
+}
+
+.setting-item .setting-icon {
+  flex: 0 0 64rpx;
+  margin-right: 18rpx;
+}
+
+.setting-item > view:nth-child(2) {
+  flex: 1;
+  margin-right: 18rpx;
+}
+
+.setting-item:last-child {
+  border-bottom: 0;
+}
+
+.setting-item:active {
+  opacity: 0.8;
+}
+
+.setting-icon {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 16rpx;
+  background: #e7f2ff;
+  color: #176fbf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.setting-title,
+.setting-desc,
+.version-card text {
+  display: block;
+}
+
+.setting-title {
+  font-size: 28rpx;
+  font-weight: 900;
+}
+
+.setting-desc {
+  margin-top: 7rpx;
+  color: #71889d;
+  font-size: 23rpx;
+}
+
+.setting-value {
+  color: #176fbf;
+  font-size: 26rpx;
+  font-weight: 850;
+}
+
+.arrow {
+  color: #9badbf;
+  font-size: 42rpx;
+}
+
+.version-card {
+  padding: 32rpx;
+  text-align: center;
+  color: #657d93;
+  font-size: 24rpx;
+}
+
+.version-title {
+  display: block;
+  color: #19304a;
+  font-size: 31rpx;
+  margin-bottom: 10rpx;
+  font-weight: 900;
+}

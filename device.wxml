@@ -1,0 +1,48 @@
+<view class="page-shell {{themeClass}}">
+  <view class="page-title">
+    <text class="name">设备连接</text>
+    <text class="title-hint">添加设备 · 蓝牙连接</text>
+  </view>
+
+  <view class="card device-hero">
+    <view class="device-circle {{connected ? 'connected' : ''}}">BLE</view>
+    <text class="section-title">{{deviceName}}</text>
+    <text class="device-desc">通过蓝牙连接传感器，自动同步 pH、温度、溶解氧数据。</text>
+    <button class="primary-btn" bindtap="addDevice">添加设备</button>
+    <button class="secondary-btn" bindtap="toggleConnection">{{connected ? '断开连接' : '连接设备'}}</button>
+  </view>
+
+  <view class="card device-status">
+    <view class="status-row"><text>连接状态</text><text class="status-value status-{{connected ? 'ok' : 'none'}}">{{status}}</text></view>
+    <view class="status-row"><text>附近设备</text><text class="status-value">{{nearbyCount}} 台</text></view>
+    <view class="status-row"><text>同步频率</text><text class="status-value">{{syncInterval}}</text></view>
+    <view class="status-row"><text>电量提醒</text><text class="status-value">{{battery ? battery + '%' : '低于 20%'}}</text></view>
+  </view>
+
+  <view class="card device-list" wx:if="{{pairedDevices.length}}">
+    <view class="section-head"><text class="section-title">已配对设备</text></view>
+    <block wx:for="{{pairedDevices}}" wx:key="id">
+      <view class="list-item">
+        <view>
+          <text class="list-title">{{item.name}}</text>
+          <text class="list-desc">添加于 {{item.addTime}}</text>
+        </view>
+        <text class="list-action" data-index="{{index}}" bindtap="removePaired">移除</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="card device-list">
+    <view class="section-head"><text class="section-title">附近设备</text></view>
+    <block wx:for="{{nearbyDevices}}" wx:key="name">
+      <view class="list-item">
+        <view>
+          <text class="list-title">{{item.name}}</text>
+          <text class="list-desc">信号强度 {{item.rssi}} dBm</text>
+        </view>
+        <text class="list-action connect" data-index="{{index}}" bindtap="connectNearby">连接</text>
+      </view>
+    </block>
+    <view wx:if="{{!nearbyDevices.length}}" class="empty-tip">暂无附近设备，点击“连接设备”重新扫描</view>
+  </view>
+</view>

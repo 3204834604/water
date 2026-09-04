@@ -1,0 +1,44 @@
+<view class="page-shell {{themeClass}}">
+  <view class="page-title">
+    <text class="name">更多</text>
+    <text class="title-hint">设置、数据与版本</text>
+  </view>
+
+  <view class="card setting-group">
+    <block wx:for="{{settings}}" wx:key="action">
+      <view class="setting-item" data-action="{{item.action}}" bindtap="onSettingTap">
+        <view class="setting-icon">{{item.icon}}</view>
+        <view>
+          <text class="setting-title">{{item.title}}</text>
+          <text class="setting-desc">{{item.desc}}</text>
+        </view>
+        <text wx:if="{{item.action === 'theme'}}" class="setting-value">{{themeLabel}}</text>
+        <text wx:else class="arrow">›</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="card setting-group">
+    <view class="setting-item">
+      <view class="setting-icon">醒</view>
+      <view>
+        <text class="setting-title">异常提醒</text>
+        <text class="setting-desc">指标超限时推送通知</text>
+      </view>
+      <switch checked="{{alert}}" color="#2f91e8" bindchange="onAlertChange" />
+    </view>
+    <view class="setting-item">
+      <view class="setting-icon">云</view>
+      <view>
+        <text class="setting-title">自动同步</text>
+        <text class="setting-desc">检测后同步到云端</text>
+      </view>
+      <switch checked="{{sync}}" color="#2f91e8" bindchange="onSyncChange" />
+    </view>
+  </view>
+
+  <view class="card version-card">
+    <text class="version-title">水质检测小程序</text>
+    <text>版本 1.0.0 · 更新时间 2026-08-26</text>
+  </view>
+</view>
